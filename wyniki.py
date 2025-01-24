@@ -1,0 +1,120 @@
+from funkcje import *
+from numpy.random import seed
+
+seed(1234)
+
+# Wyniki - opcja europejska
+
+R = 100000
+cmc_eu = cmc_eu(R)
+anty_eu = anty_eu(R)
+kontrol_eu = kontrol_eu(R, 100)
+
+prop_eu2 = proportional_allocation(2, R, 1)
+prop_eu5 = proportional_allocation(5, R, 1)
+prop_eu10 = proportional_allocation(10, R, 1)
+prop_eu50 = proportional_allocation(50, R, 1)
+prop_eu100 = proportional_allocation(100, R, 1)
+
+opt_eu2 = optimal_allocation2(2, R)
+opt_eu5 = optimal_allocation2(5, R)
+opt_eu10 = optimal_allocation2(10, R)
+opt_eu50 = optimal_allocation2(50, R)
+opt_eu100 = optimal_allocation2(100, R)
+
+# Wyniki - opcja azjatycka
+
+cmc_as2 = cmc_as(R, 2)
+cmc_as4 = cmc_as(R, 4)
+cmc_as10 = cmc_as(R, 10)
+cmc_as100 = cmc_as(R, 100)
+cmc_as1000 = cmc_as(R, 1000)
+
+prop_as2 = proportional_allocation(10, R, 2)
+prop_as4 = proportional_allocation(10, R, 4)
+prop_as10 = proportional_allocation(10, R, 10)
+prop_as100 = proportional_allocation(10, R, 100)
+prop_as1000 = proportional_allocation(10, R, 1000)
+
+opt_as2 = optimal_allocation(10, R, 2)
+opt_as4 = optimal_allocation(10, R, 4)
+opt_as10 = optimal_allocation(10, R, 10)
+opt_as100 = optimal_allocation(10, R, 100)
+opt_as1000 = optimal_allocation(10, R, 1000)
+
+# Wariancje - opcja europejska
+
+N, R = 100, 10000
+var_cmc_eu = var_cmc_eu(N, R)
+var_anty_eu = var_anty_eu(N, R)
+var_kontrol_eu = var_kontrol_eu(N, R, 100)
+
+var_prop_eu2 = var_proportional_eu(N, R, 2)
+var_prop_eu5 = var_proportional_eu(N, R, 5)
+var_prop_eu10 = var_proportional_eu(N, R, 10)
+var_prop_eu50 = var_proportional_eu(N, R, 50)
+var_prop_eu100 = var_proportional_eu(N, R, 100)
+
+var_opt_eu2 = var_optimal_eu(N, R, 2)
+var_opt_eu5 = var_optimal_eu(N, R, 5)
+var_opt_eu10 = var_optimal_eu(N, R, 10)
+var_opt_eu50 = var_optimal_eu(N, R, 50)
+var_opt_eu100 = var_optimal_eu(N, R, 100)
+
+
+print("Wyniki - opcja europejska:")
+print("..............")
+print("CMC:", cmc_eu)
+print("anty eu:", anty_eu)
+print("kontrol eu:", kontrol_eu)
+print("..............")
+print("prop strat m=2:", prop_eu2)
+print("prop strat m=5:", prop_eu5)
+print("prop strat m=10:", prop_eu10)
+print("prop strat m=50:", prop_eu50)
+print("prop strat m=100:", prop_eu100)
+print("..............")
+print("opt strat m=2", opt_eu2)
+print("opt strat m=5", opt_eu5)
+print("opt strat m=10", opt_eu10)
+print("opt strat m=50", opt_eu50)
+print("opt strat m=100", opt_eu100)
+print("..............")
+print("Wyniki - opcja azjatycka:")
+print("..............")
+print("CMC n=2:", cmc_as2)
+print("CMC n=4:", cmc_as4)
+print("CMC n=10:", cmc_as10)
+print("CMC n=100:", cmc_as100)
+print("CMC n=1000:", cmc_as1000)
+print("..............")
+print("prop strat n=2:", prop_as2)
+print("prop strat n=4:", prop_as4)
+print("prop strat n=10:", prop_as10)
+print("prop strat n=100:", prop_as100)
+print("prop strat n=1000:", prop_as1000)
+print("..............")
+print("opt strat n=2", opt_as2)
+print("opt strat n=4", opt_as4)
+print("opt strat n=10", opt_as10)
+print("opt strat n=100", opt_as100)
+print("opt strat n=1000", opt_as1000)
+print("..............")
+print("Wariancje - opcja europejska:")
+print("..............")
+print("var cmc:", var_cmc_eu)
+print("var anty:", var_anty_eu)
+print("var kontrol:", var_kontrol_eu)
+print("..............")
+print("var prop strat m=2:", var_prop_eu2)
+print("var prop strat m=5:", var_prop_eu5)
+print("var prop strat m=10:", var_prop_eu10)
+print("var prop strat m=50:", var_prop_eu50)
+print("var prop strat m=100:", var_prop_eu100)
+print("..............")
+print("var opt strat m=2:", var_opt_eu2)
+print("var opt strat m=5:", var_opt_eu5)
+print("var opt strat m=10:", var_opt_eu10)
+print("var opt strat m=50:", var_opt_eu50)
+print("var opt strat m=100:", var_opt_eu100)
+
